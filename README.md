@@ -1,4 +1,6 @@
-### Hi there 👋
+![](https://github.com/dzombicadi/dzombicadi/blob/main/background-dzomba.gif)
+
+## Hi there 👋
 
 <!--
 **dzombicadi/dzombicadi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

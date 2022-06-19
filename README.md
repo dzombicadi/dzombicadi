@@ -1,4 +1,4 @@
-<img src="https://github.com/dzombicadi/dzombicadi/blob/main/background-dzomba.gif" width="900" height="350" />
+<img src="https://github.com/dzombicadi/dzombicadi/blob/main/background-dzomba.gif" width="900" height="320" />
 
 
 ## 👋 Hi there

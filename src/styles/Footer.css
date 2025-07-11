@@ -1,0 +1,26 @@
+footer {
+  text-align: center;
+  color: var(--white);
+  padding: 25px 0 15px 0;
+}
+
+.copyright-box {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: NTR, sans-serif;
+  color: var(--smoke);
+}
+
+footer .copyright {
+  margin-bottom: 0.3rem;
+}
+
+.copyright-link {
+  text-decoration: none;
+  color: var(--smoke);
+}
+
+.copyright-link:hover {
+  color: var(--greenBrightColor);
+  transition: all ease-in 1s;
+}

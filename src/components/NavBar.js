@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import SchoolIcon from "@mui/icons-material/School";
 
 class NavBar extends React.Component {
   render() {
@@ -53,6 +54,14 @@ class NavBar extends React.Component {
               target="_blank"
             >
               <LinkedInIcon style={{ fontSize: 25 }}></LinkedInIcon>
+            </Nav.Link>
+            <Nav.Link
+              id="college-link"
+              className="nav-icon-links"
+              href="https://drive.google.com/drive/folders/1vOOb0MDQAp3S9cp4UVXDDw9WVyukgMJ8?usp=sharing"
+              target="_blank"
+            >
+              <SchoolIcon></SchoolIcon>
             </Nav.Link>
           </Nav>
         </Container>

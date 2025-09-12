@@ -163,6 +163,7 @@
     height: unset;
     padding-left: unset;
     padding-right: unset;
+    min-height: 42vh;
   }
   .carousel {
     display: none;

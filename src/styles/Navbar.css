@@ -26,6 +26,10 @@
   transition: all ease-in 300ms;
 }
 
+#college-link {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-light .navbar-brand {
     display: none;
@@ -33,5 +37,9 @@
 
   .navbar-light .navbar-nav.me-auto .nav-links {
     display: none;
+  }
+
+  #college-link {
+    display: inline;
   }
 }

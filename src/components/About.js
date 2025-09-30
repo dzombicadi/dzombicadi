@@ -29,7 +29,7 @@ class About extends React.Component {
                     <Fade delay={500} cascade={false} triggerOnce={true}>
                       <div className="about-text">
                         <p>
-                          I'm a third-year Mathematics and Computer Science
+                          I'm a fourth-year Mathematics and Computer Science
                           student at the University of Tuzla, with a deep
                           passion for technology and software development. My
                           academic journey has equipped me with strong

@@ -1,0 +1,141 @@
+/* ---------- Layout ---------- */
+
+#experience {
+  min-height: 60vh;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.tabPanel-joblist {
+  background-color: #0a192f !important;
+  margin-left: 20px;
+}
+
+.section-dash {
+  color: var(--lightestSlate);
+  font-weight: 700;
+}
+
+/* ---------- Job header ---------- */
+
+.joblist-job-title {
+  font-family: "NTR", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--lightestSlate);
+}
+
+.joblist-job-company {
+  font-family: "NTR", sans-serif;
+  font-size: 28px;
+  color: var(--greenBrightColor);
+  font-weight: bold;
+}
+
+.joblist-duration {
+  font-family: "NTR", sans-serif;
+  font-size: 18px;
+  color: var(--grayColor);
+}
+
+/* ---------- Tabs / Panels ---------- */
+
+/* Tab panel spacing */
+[role="tabpanel"] {
+  margin-top: -28px;
+  padding-left: 25px;
+}
+
+/* Tab labels */
+.MuiTab-root {
+  font-size: 16px;
+  text-align: left;
+  align-items: flex-start !important;
+  font-family: "NTR", sans-serif;
+  color: var(--lightestSlate) !important;
+  padding: 6px 20px;
+}
+
+/* Selected tab */
+.MuiTab-root.Mui-selected {
+  color: var(--greenBrightColor) !important;
+}
+
+/* Tab indicator (underline / bar) */
+.MuiTabs-indicator {
+  background-color: var(--greenBrightColor) !important;
+}
+
+/* Remove focus outline */
+.MuiButtonBase-root {
+  outline: none !important;
+}
+
+.MuiButtonBase-root:focus {
+  color: var(--greenBrightColor) !important;
+}
+
+/* ---------- Job description ---------- */
+
+ul {
+  margin-left: -40px;
+}
+
+.job-description {
+  padding-top: 24px;
+  max-width: 650px;
+  font-family: "NTR", sans-serif;
+  font-size: 20px;
+  list-style: none;
+}
+
+.job-description li {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  font-size: 18px;
+  color: var(--grayColor);
+}
+
+.job-description li::before {
+  content: "▹    ";
+  color: var(--greenBrightColor);
+  position: absolute;
+  left: 0;
+}
+
+.job-description a,
+.job-description b {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.MuiTabs-vertical .MuiTab-root {
+  font-weight: 700;
+  font-size: medium;
+}
+
+/* ---------- Mobile ---------- */
+
+@media only screen and (max-width: 600px) {
+  #experience {
+    min-height: 90vh;
+    overflow-y: auto;
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  /* Root container now comes from styled(Box) */
+  #experience > div {
+    height: unset !important;
+    flex-direction: column;
+  }
+
+  .joblist-job-title {
+    font-size: 22px;
+  }
+
+  .joblist-job-company {
+    font-size: 22px;
+  }
+}

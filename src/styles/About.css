@@ -3,7 +3,7 @@
   margin: auto;
   max-width: 1000px;
   padding-top: 20px;
-  padding-bottom: 45px;
+  padding-bottom: 60px;
 }
 
 .about-header {
@@ -51,7 +51,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0;
+  margin-left: 60px;
+  margin-top: 10px;
 }
 
 .languages-list li::marker {

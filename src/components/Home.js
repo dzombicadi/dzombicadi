@@ -22,7 +22,7 @@ class NavBar extends React.Component {
 
         <Fade>
           <div className="home-description">
-            I am a third-year mathematics student at the{" "}
+            I am a fourth-year mathematics student at the{" "}
             <a
               className="university-link"
               href="https://untz.ba/"

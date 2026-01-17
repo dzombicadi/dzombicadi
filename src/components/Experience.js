@@ -27,6 +27,8 @@ class Experience extends React.Component {
               <span className="section-dash">/</span> experience
             </span>
           </div>
+        </Fade>
+        <Fade direction="up" triggerOnce={true}>
           <JobList></JobList>
         </Fade>
       </div>

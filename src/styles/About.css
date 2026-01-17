@@ -47,11 +47,10 @@
 }
 
 .languages-list {
-  padding-top: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 60px;
+  margin-left: 35px;
   margin-top: 10px;
 }
 
@@ -102,6 +101,5 @@
 
   .languages-list {
     font-size: 18px;
-    padding-left: 20px;
   }
 }

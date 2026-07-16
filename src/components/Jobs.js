@@ -61,6 +61,26 @@ const JobList = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const experienceItems = {
+    "Cape Ann": {
+      jobTitle: "Prompt Engineer Intern @",
+      url: "https://capeannenterprises.com/",
+      duration: "MAR 2026 - JUN 2026",
+      desc: [
+        <>
+          Built <strong>Python frontend</strong> and <strong>backend</strong>{" "}
+          functionality using LLMs such as OpenAI ChatGPT, Google Gemini, and
+          Anthropic Claude.
+        </>,
+        <>
+          Extended an existing <strong>AI healthcare platform</strong> with new
+          features for Alzheimer's interviews and MoCA cognitive assessments.
+        </>,
+        <>
+          Improved conversational AI workflows and cognitive assessment
+          functionality for healthcare-focused applications.
+        </>,
+      ],
+    },
     HTEC: {
       jobTitle: "Software Engineer Intern @",
       url: "https://htec.com/",
@@ -80,26 +100,6 @@ const JobList = () => {
           Used <strong>Jira</strong> for task tracking and planning, and{" "}
           <strong>Bitbucket</strong> for version control and team collaboration
           during development.
-        </>,
-      ],
-    },
-    "Cape Ann": {
-      jobTitle: "Prompt Engineer Intern @",
-      url: "https://capeannenterprises.com/",
-      duration: "MAR 2026 - JUN 2026",
-      desc: [
-        <>
-          Built <strong>Python frontend</strong> and <strong>backend</strong>{" "}
-          functionality using LLMs such as OpenAI ChatGPT, Google Gemini, and
-          Anthropic Claude.
-        </>,
-        <>
-          Extended an existing <strong>AI healthcare platform</strong> with new
-          features for Alzheimer's interviews and MoCA cognitive assessments.
-        </>,
-        <>
-          Improved conversational AI workflows and cognitive assessment
-          functionality for healthcare-focused applications.
         </>,
       ],
     },

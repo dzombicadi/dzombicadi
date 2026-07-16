@@ -30,6 +30,8 @@
   font-size: 28px;
   color: var(--greenBrightColor);
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .joblist-duration {
@@ -40,20 +42,28 @@
 
 /* ---------- Tabs / Panels ---------- */
 
-/* Tab panel spacing */
-[role="tabpanel"] {
+/* Tab panel spacing (desktop / vertical tabs only) */
+[id^="vertical-tabpanel"] {
   margin-top: -28px;
   padding-left: 25px;
 }
 
 /* Tab labels */
 .MuiTab-root {
-  font-size: 16px;
-  text-align: left;
-  align-items: flex-start !important;
   font-family: "NTR", sans-serif;
   color: var(--lightestSlate) !important;
   padding: 6px 20px;
+}
+
+.MuiTabs-root .MuiTab-root {
+  font-size: medium;
+  font-weight: 700;
+}
+
+/* Left-align labels only when tabs are vertical (desktop) */
+.MuiTabs-vertical .MuiTab-root {
+  text-align: left;
+  align-items: flex-start !important;
 }
 
 /* Selected tab */
@@ -110,16 +120,11 @@ ul {
   font-weight: bold;
 }
 
-.MuiTabs-vertical .MuiTab-root {
-  font-weight: 700;
-  font-size: medium;
-}
-
 /* ---------- Mobile ---------- */
 
 @media only screen and (max-width: 600px) {
   #experience {
-    min-height: 90vh;
+    min-height: 60vh;
     overflow-y: auto;
     padding-left: unset;
     padding-right: unset;

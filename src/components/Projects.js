@@ -45,7 +45,7 @@ class Projects extends React.Component {
 
     return (
       <div id="projects">
-        <Fade direction="down" triggerOnce={true}>
+        <Fade direction="up" triggerOnce={true}>
           <div className="section-header ">
             <span className="section-title">
               <span className="section-dash">/</span> projects

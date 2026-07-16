@@ -7,6 +7,7 @@ import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SchoolIcon from "@mui/icons-material/School";
+import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 
 class NavBar extends React.Component {
   render() {
@@ -37,7 +38,7 @@ class NavBar extends React.Component {
           <Nav className="ml-auto">
             <Nav.Link
               className="nav-icon-links"
-              href="mailto:dzombicadi@icloud.com"
+              href="mailto:dzombicadi1@gmail.com"
             >
               <MailRoundedIcon></MailRoundedIcon>
             </Nav.Link>
@@ -54,6 +55,13 @@ class NavBar extends React.Component {
               target="_blank"
             >
               <LinkedInIcon style={{ fontSize: 25 }}></LinkedInIcon>
+            </Nav.Link>
+            <Nav.Link
+              className="nav-icon-links"
+              href={process.env.PUBLIC_URL + "/AdiDzombic-CV.pdf"}
+              download="AdiDzombic-CV.pdf"
+            >
+              <DescriptionRoundedIcon></DescriptionRoundedIcon>
             </Nav.Link>
             <Nav.Link
               id="college-link"

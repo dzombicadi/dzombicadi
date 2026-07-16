@@ -1,48 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { styled } from "@mui/material/styles";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import {
+  Tabs,
+  Tab,
+  Typography,
+  Box,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { Fade } from "react-awesome-reveal";
-
-const isHorizontal = window.innerWidth < 600;
-
-/* ---------- Styled components (MUI v6) ---------- */
-
-const Root = styled(Box)(({ theme }) => ({
-  flexGrow: 1,
-  backgroundColor: theme.palette.background.paper,
-  display: "flex",
-  height: 300,
-}));
-
-const StyledTabs = styled(Tabs)(({ theme }) => ({
-  borderRight: `1px solid ${theme.palette.divider}`,
-}));
 
 /* ---------- Tab Panel ---------- */
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, isMobile, ...other } = props;
 
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
       id={
-        isHorizontal
-          ? `full-width-tabpanel-${index}`
-          : `vertical-tabpanel-${index}`
+        isMobile ? `full-width-tabpanel-${index}` : `vertical-tabpanel-${index}`
       }
       aria-labelledby={
-        isHorizontal ? `full-width-tab-${index}` : `vertical-tab-${index}`
+        isMobile ? `full-width-tab-${index}` : `vertical-tab-${index}`
       }
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box sx={{ p: { xs: 2, sm: 3 } }}>
           <Typography component="div">{children}</Typography>
         </Box>
       )}
@@ -54,25 +40,30 @@ TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
+  isMobile: PropTypes.bool,
 };
 
-function a11yProps(index) {
-  return isHorizontal
+function a11yProps(index, isMobile) {
+  return isMobile
     ? {
         id: `full-width-tab-${index}`,
         "aria-controls": `full-width-tabpanel-${index}`,
       }
     : {
         id: `vertical-tab-${index}`,
+        "aria-controls": `vertical-tabpanel-${index}`,
       };
 }
 
 const JobList = () => {
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const experienceItems = {
     HTEC: {
       jobTitle: "Software Engineer Intern @",
+      url: "https://htec.com/",
       duration: "OCT 2025 - JAN 2026",
       desc: [
         <>
@@ -92,6 +83,26 @@ const JobList = () => {
         </>,
       ],
     },
+    "Cape Ann": {
+      jobTitle: "Prompt Engineer Intern @",
+      url: "https://capeannenterprises.com/",
+      duration: "MAR 2026 - JUN 2026",
+      desc: [
+        <>
+          Built <strong>Python frontend</strong> and <strong>backend</strong>{" "}
+          functionality using LLMs such as OpenAI ChatGPT, Google Gemini, and
+          Anthropic Claude.
+        </>,
+        <>
+          Extended an existing <strong>AI healthcare platform</strong> with new
+          features for Alzheimer's interviews and MoCA cognitive assessments.
+        </>,
+        <>
+          Improved conversational AI workflows and cognitive assessment
+          functionality for healthcare-focused applications.
+        </>,
+      ],
+    },
   };
 
   const handleChange = (event, newValue) => {
@@ -99,41 +110,61 @@ const JobList = () => {
   };
 
   return (
-    <Root className="tabPanel-joblist">
-      <StyledTabs
-        orientation={isHorizontal ? "horizontal" : "vertical"}
-        variant={isHorizontal ? "fullWidth" : "scrollable"}
+    <Box
+      className="tabPanel-joblist"
+      sx={{
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        height: "auto",
+        minHeight: 300,
+      }}
+    >
+      <Tabs
+        orientation={isMobile ? "horizontal" : "vertical"}
+        variant="scrollable"
+        scrollButtons="auto"
         value={value}
         onChange={handleChange}
+        sx={{
+          borderRight: isMobile ? 0 : 1,
+          borderBottom: isMobile ? 1 : 0,
+          borderColor: "var(--lightestNavy)",
+        }}
       >
         {Object.keys(experienceItems).map((key, i) => (
-          <Tab
-            key={key}
-            label={isHorizontal ? `0${i}.` : key}
-            {...a11yProps(i)}
-          />
+          <Tab key={key} label={key} {...a11yProps(i, isMobile)} />
         ))}
-      </StyledTabs>
+      </Tabs>
 
-      {Object.keys(experienceItems).map((key, i) => (
-        <TabPanel key={key} value={value} index={i}>
-          <span className="joblist-job-title">
-            {experienceItems[key].jobTitle + " "}
-          </span>
-          <span className="joblist-job-company">{key}</span>
-          <div className="joblist-duration">
-            {experienceItems[key].duration}
-          </div>
-          <ul className="job-description">
-            {experienceItems[key].desc.map((descItem, j) => (
-              <Fade direction="down" triggerOnce={true}>
-                <li>{descItem}</li>
-              </Fade>
-            ))}
-          </ul>
-        </TabPanel>
-      ))}
-    </Root>
+      <Box sx={{ flexGrow: 1 }}>
+        {Object.keys(experienceItems).map((key, i) => (
+          <TabPanel key={key} value={value} index={i} isMobile={isMobile}>
+            <span className="joblist-job-title">
+              {experienceItems[key].jobTitle + " "}
+            </span>
+            <a
+              className="joblist-job-company"
+              href={experienceItems[key].url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {key}
+            </a>
+            <div className="joblist-duration">
+              {experienceItems[key].duration}
+            </div>
+            <ul className="job-description">
+              {experienceItems[key].desc.map((descItem, j) => (
+                <Fade key={j} direction="up" triggerOnce={true}>
+                  <li>{descItem}</li>
+                </Fade>
+              ))}
+            </ul>
+          </TabPanel>
+        ))}
+      </Box>
+    </Box>
   );
 };
 

@@ -4,7 +4,7 @@ import "../styles/Home.css";
 import { Fade } from "react-awesome-reveal";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 
-class NavBar extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div id="home">
@@ -35,7 +35,7 @@ class NavBar extends React.Component {
           </div>
         </Fade>
         <Fade direction="up" triggerOnce={true}>
-          <a href="mailto:dzombicadi@icloud.com" className="home-contact">
+          <a href="mailto:dzombicadi1@gmail.com" className="home-contact">
             <EmailRoundedIcon className="home-contact-icon"></EmailRoundedIcon>
             {}Say hi!
           </a>
@@ -45,4 +45,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default Home;

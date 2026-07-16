@@ -14,7 +14,7 @@ class About extends React.Component {
                 <div className="about-header">
                   <h3 className="about-title">
                     <span>/</span> about me
-                    <div class="line-mf"></div>
+                    <div className="line-mf"></div>
                   </h3>
                   <p className="about-description">
                     Brief information about me and some of my interests.
@@ -30,7 +30,16 @@ class About extends React.Component {
                       <div className="about-text">
                         <p>
                           I'm a fourth-year Mathematics and Computer Science
-                          student at the University of Tuzla, with a deep
+                          student at the{" "}
+                          <a
+                            className="university-link"
+                            href="https://untz.ba/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            University of Tuzla
+                          </a>
+                          , with a deep
                           passion for technology and software development. My
                           academic journey has equipped me with strong
                           problem-solving skills and a solid foundation in
@@ -47,11 +56,11 @@ class About extends React.Component {
                           <div className="languages-list">
                             <ul className="tech-stack">
                               <li>React.js & Node.js</li>
-                              <li>JavaScript ES6+</li>
+                              <li>JavaScript/TypeScript</li>
                               <li>C++</li>
                             </ul>
                             <ul className="tech-stack">
-                              <li>HTML & CSS</li>
+                              <li>Pandas & NumPy</li>
                               <li>Python</li>
                               <li>MongoDB & MySQL</li>
                             </ul>
